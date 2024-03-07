@@ -1,9 +1,14 @@
-Version 0.2
-'From rounds to game'
+Version 0.3
+'UI Build Buttons'
 
 Rock beats Scissors
 Paper beats Rock
 Scissors beats Paper
+
+// Create three buttons. (one for each selection) v0.3
+    When player clicks on button, the program plays a round
+    every time the button is clicked.
+    Console.log the results.
 
 Get computer choice (random number between 1 and 3)
     If choice equals 1, then rock
