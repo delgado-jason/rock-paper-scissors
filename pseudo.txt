@@ -1,3 +1,5 @@
+Version 0.1
+
 Rock beats Scissors
 Paper beats Rock
 Scissors beats Paper
