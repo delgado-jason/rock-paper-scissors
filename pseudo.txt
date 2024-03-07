@@ -1,4 +1,5 @@
-Version 0.1
+Version 0.2
+'From rounds to game'
 
 Rock beats Scissors
 Paper beats Rock
@@ -31,3 +32,9 @@ Play the round
         "It's a tie!"
     Else
         "You lose! computer's choice beats player's choice."
+
+Play the game (5 rounds)
+    Set score to 0 for both players
+    Play a round
+        Update score for winner
+    Report winner
