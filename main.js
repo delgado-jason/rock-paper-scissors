@@ -19,9 +19,9 @@ function getPlayerChoice(){
 
 //Play a round
 function playRound(plChoice, comChoice){
-    const WIN = `You win! ${plChoice} beats ${comChoice}.`;
-    const TIE = "It's a tie!";
-    const LOSE = `You lose! ${comChoice} beats ${plChoice}.`;
+    const WIN = 1;
+    const TIE = 0;
+    const LOSE = -1;
     
     // Determine the winner
     if(plChoice == "rock" && comChoice == "scissors"){
@@ -41,4 +41,36 @@ function playRound(plChoice, comChoice){
     }
 }
 
-console.log(playRound(getPlayerChoice(), getComputerChoice()));
+function playGame(){
+    // Set initial scores
+    let plScore = 0;
+    let comScore = 0;
+
+    // Set counter
+    let count = 0;
+    while(count < 5){
+        count++;
+        let playersChoice = getPlayerChoice();
+        let computersChoice = getComputerChoice();
+        let result = playRound(playersChoice, computersChoice);
+        if(result == 1){
+            plScore = plScore + 1;
+            console.log(`You win! ${playersChoice} beats ${computersChoice}.`);
+        } else if(result == 0){
+            console.log("It's a tie!.");
+        } else {
+            comScore = comScore + 1;
+            console.log(`You lose! ${computersChoice} beats ${playersChoice}.`);
+        }
+
+    }
+    if(plScore > comScore){
+        return "You win the game!";
+    } else if(comScore > plScore){
+        return "Sorry, you lose.";
+    } else{
+        return "Great game. It's a tiebreaker!";
+    }
+}
+
+console.log(playGame());
