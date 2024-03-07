@@ -1,0 +1,31 @@
+Rock beats Scissors
+Paper beats Rock
+Scissors beats Paper
+
+Get computer choice (random number between 1 and 3)
+    If choice equals 1, then rock
+    Else if choice equals 2, then paper
+    Else scissors
+
+    return the choice
+
+Get the player's choice
+    Ask the player to choose rock, paper, or scissors
+    Sanitize their choice (make case insensitive)
+    return the choice
+
+Play the round
+    If player's choice is Rock and computer's choice is Scissors
+        "You win! Rock beats Scissors
+    Else If player's choice is Rock and computer's choice is Rock
+        "It's a tie!
+    Else If player choice is Paper and computer's choice is Rock
+        "You win! Paper beats Rock."
+    Else If player's choice is Paper and computer's choice is Paper
+        "It's a tie!"
+    Else If player's choice is Scissors and computer's choice is Paper
+        "You win! Scissors beats Paper."
+    Else If player's choice is Scissors and computer's choice is Scissors
+        "It's a tie!"
+    Else
+        "You lose! computer's choice beats player's choice."
