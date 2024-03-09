@@ -1,11 +1,11 @@
-Version 0.3
-'UI Build Buttons'
+Version 0.4
+'Build the logic for the buttons and to play a round'
 
 Rock beats Scissors
 Paper beats Rock
 Scissors beats Paper
 
-// Create three buttons. (one for each selection) v0.3
+// Create three buttons. (one for each selection) v0.4
     When player clicks on button, the program plays a round
     every time the button is clicked.
     Console.log the results.
