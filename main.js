@@ -1,3 +1,29 @@
+let btn = document.querySelectorAll(".btn");
+
+//let choice = [];
+//let comChoice = getComputerChoice();
+
+for(let i = 0; i < btn.length; i++){
+    btn[i].addEventListener("click", (e) =>{
+        let btnPushed = btn[i].id;
+        // Get player's choice
+        let plChoice = getPlayerChoice(btnPushed);
+        // Get computer's choice
+        let comChoice = getComputerChoice();
+        // Play a round
+        let result = playRound(plChoice, comChoice);
+        // Determine a winner
+        if(result == 1){
+            console.log(`You win! ${plChoice} beats ${comChoice}.`);
+        } else if(result == 0){
+            console.log("It's a tie!.");
+        } else {
+            console.log(`You lose! ${comChoice} beats ${plChoice}.`);
+        }
+    })
+}
+
+
 // Get the computer's choice
 function getComputerChoice() {
     let choice = Math.ceil(Math.random() * 3);
@@ -12,9 +38,14 @@ function getComputerChoice() {
 }
 
 // Get the player's choice
-function getPlayerChoice(){
-    let choice = prompt("Please choose rock, paper, or scissors: ").toLowerCase();
-    return choice;
+function getPlayerChoice(b){
+    if(b == "rock-btn"){
+        return "rock"
+    }else if(b == "paper-btn"){
+        return "paper";
+    }else if(b == "scissors-btn") {
+        return "scissors";
+    }
 }
 
 //Play a round
@@ -42,35 +73,14 @@ function playRound(plChoice, comChoice){
 }
 
 function playGame(){
-    // Set initial scores
-    let plScore = 0;
-    let comScore = 0;
-
-    // Set counter
-    let count = 0;
-    while(count < 5){
-        count++;
-        let playersChoice = getPlayerChoice();
-        let computersChoice = getComputerChoice();
-        let result = playRound(playersChoice, computersChoice);
-        if(result == 1){
-            plScore = plScore + 1;
-            console.log(`You win! ${playersChoice} beats ${computersChoice}.`);
-        } else if(result == 0){
-            console.log("It's a tie!.");
-        } else {
-            comScore = comScore + 1;
-            console.log(`You lose! ${computersChoice} beats ${playersChoice}.`);
-        }
-
-    }
-    if(plScore > comScore){
+    /**if(plScore > comScore){
         return "You win the game!";
     } else if(comScore > plScore){
         return "Sorry, you lose.";
     } else{
         return "Great game. It's a tiebreaker!";
-    }
+    }**/
 }
 
-//console.log(playGame());
+
+
