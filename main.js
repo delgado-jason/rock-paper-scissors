@@ -1,10 +1,19 @@
 let btn = document.querySelectorAll(".btn");
+let uiResult = document.querySelector("#results>p");
+uiResult.textContent = "";
+
+let uiPlayerScore = document.querySelector(".pScoreSpan");
+let uiComScore = document.querySelector(".cScoreSpan");
+let plScore = 0;
+let comScore = 0;
+let counter = 0;
 
 //let choice = [];
 //let comChoice = getComputerChoice();
 
 for(let i = 0; i < btn.length; i++){
     btn[i].addEventListener("click", (e) =>{
+        counter++
         let btnPushed = btn[i].id;
         // Get player's choice
         let plChoice = getPlayerChoice(btnPushed);
@@ -13,13 +22,43 @@ for(let i = 0; i < btn.length; i++){
         // Play a round
         let result = playRound(plChoice, comChoice);
         // Determine a winner
-        if(result == 1){
-            console.log(`You win! ${plChoice} beats ${comChoice}.`);
-        } else if(result == 0){
-            console.log("It's a tie!.");
-        } else {
-            console.log(`You lose! ${comChoice} beats ${plChoice}.`);
+        if(counter == 5){
+            if(plScore > comScore){
+                uiResult.textContent = "You Win the Game! Congratz!";
+                counter = 0;
+                plScore = 0;
+                comScore = 0;
+                uiComScore.textContent = comScore;
+                uiPlayerScore.textContent = plScore;
+            }else if(comScore > plScore){
+                uiResult.textContent = "You Lose. Play again.";
+                counter = 0;
+                plScore = 0;
+                comScore = 0;
+                uiComScore.textContent = comScore;
+                uiPlayerScore.textContent = plScore;
+            }else{
+                uiResult.textContent = "It's a tie. Next time.";
+                counter = 0;
+                plScore = 0;
+                comScore = 0;
+                uiComScore.textContent = comScore;
+                uiPlayerScore.textContent = plScore;
+            }
+        }else{
+            if(result == 1){
+                plScore++;
+                uiPlayerScore.textContent = plScore;
+                uiResult.textContent = `You win! ${plChoice} beats ${comChoice}.`;
+            } else if(result == 0){
+                uiResult.textContent = "It's a tie!.";
+            } else {
+                comScore++;
+                uiComScore.textContent = comScore;
+                uiResult.textContent = `You lose! ${comChoice} beats ${plChoice}.`;
+            }
         }
+        
     })
 }
 
