@@ -5,75 +5,75 @@ body {
 }
 
 .container {
-    max-width: 80%;
-    margin: 40px auto;
     font-family: Futura;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scores {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
 }
 
 h1{
     display: block;
-    font-size: 67px;
+    font-size: 42px;
     text-align: center;
     font-weight: 500;
     text-transform: uppercase;
     color: #f58747;
     text-shadow: 4px, 4px 3px, #aa4f19;
-    margin-bottom: 20px;
 }
 
 h3 {
-    font-size: 32px;
+    font-size: 28px;
 }
 
 #playerScore {
-    display: inline-block;
-    margin: 0 14% 20px 30%;
 }
 
 #computerScore {
-    display: inline-block;
-    margin-bottom: 20px;
 }
 
 span {
-    margin-left: 15px;
 }
 
 #results {
-    text-align: center;
-    margin-top: 0;
+    margin-bottom: 40px;
 }
 
 #results p {
     font-size: 20px;
-    margin-bottom: 20px;
 }
 
 #rock, #paper, #scissors {
-    display: inline-block;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    margin-right: 10%;
 }
 
 #rock {
-    margin-left: 22%;
 }
 
 .btn {
-    width: 207px;
+    width: 127px;
     height: 47px;
     background-color: #f58747;
     border-radius: 10px;
     box-shadow: 3px 3px 4px #aa4f19;
-    margin-left: -40px;
 }
 
 .btn h4 {
-    font-size: 30px;
+    font-size: 24px;
     font-weight: bold;
     text-align: center;
-    padding-top: 4px;
+    padding-top: 6px;
 }
+
 
 

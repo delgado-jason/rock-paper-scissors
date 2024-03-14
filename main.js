@@ -1,6 +1,6 @@
 let btn = document.querySelectorAll(".btn");
 let uiResult = document.querySelector("#results>p");
-uiResult.textContent = "";
+uiResult.textContent = ""; 
 
 let uiPlayerScore = document.querySelector(".pScoreSpan");
 let uiComScore = document.querySelector(".cScoreSpan");
